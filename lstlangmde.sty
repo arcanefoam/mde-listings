@@ -1,0 +1,68 @@
+%
+% This is file `lstlangmde.sty',
+% created by Horacio Hoyos, copyright 2016
+% The lstlangmde language definition file is copyright 2017 Horacio
+% Hoyos.
+%
+% This work may be distributed and/or modified under the conditions
+% of the LaTeX Project Public License, either version 1.3 of this
+% license or (at your option) any later version.
+% The latest version of this license is in
+%   http://www.latex-project.org/lppl.txt
+% and version 1.3 or later is part of all distributions of LaTeX
+% version 2005/12/01 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+% 
+% The Current Maintainer of this work is Horacio Hoyos
+%
+% This work consists of the files lstlocal.cfg and lstlangmde.sty.
+%
+\ProvidesFile{lstlangmde.sty}[2016/06/04 1.0 MDE languages file]
+%% Eclipse OCL
+\lst@definelanguage[Eclipse]{OCL} {
+    morekeywords={and,body,context,def,derive,else,endif,endpackage,false,if,implies,in,init,inv,invalid,let,not,null,or,package,post,pre,self,static,then,true,xor,Bag,Boolean,Collection,Integer,OclAny,OclInvalid,OclMessage,OclVoid,OrderedSet,Real,Sequence,Set,String,Tuple,UnlimitedNatural},% 
+    morekeywords=[2]{oclIsNew,oclIsUndefined,oclAsType,oclIsTypeOf,oclIsKindOf,oclisInState,allInstances,hasReturned,result,isSignalSent,isOperationCall,count,execludes,excludesAll,includes,includesAll,isEmpty,notEmpty,size,sum,append,asBag,asOrderedSet,asSequence,asSet,at,excluding,first,flatten,including,indexOf,insertAt,intersection,last,prepend,subOrderedSet,subsequence,symmetricDifference,union,any,collect,collectNested,exists,forAll,isUnique,iterate,one,reject,select,sortedBy}
+    sensitive=t,%
+    morecomment=[l]--,%
+    morecomment=[s]{/*}{*/},%
+    morestring=[b]',%
+}[keywords,comments,strings]
+%% Eclipse OCL in Ecore
+\lst@definelanguage[Eclipse]{OCLinEcore}[Eclipse]{OCL}{
+    morekeywords={abstract,annotation,attribute,body,callable,class,composes,datatype,definition,derivation,derived,enum,extends,extends,id,import,initial,interface,invariant,library ,module,operation,ordered,package,postcondition,precondition,property,readonly,resolve,serializable,static,super,transient,unique,unsettable,volatile}
+}
+%% Eclipse QVTr
+\lst@definelanguage[Eclipse]{QVTr}[Eclipse]{OCL}{
+    morekeywords={checkonly,domain,enforce,extends,implementedby,import,key,overrides,primitive,query,relation,top,transformation,when,where,++},%
+    alsoletter={+}
+}
+%% Eclipse QVTc
+\lst@definelanguage[Eclipse]{QVTc}[Eclipse]{OCL}{
+    morekeywords={import,transformation,imports,uses,map,in,refines,check,enforce,where,realize,default,query}
+}
+%% Epsilon EOL
+\lst@definelanguage[Epsilon]{EOL} {
+    morekeywords={::,::=,Bag,Collection,List,Map,Native,OrderedSet,Sequence,Set,abort,alias,and,break,breakAll,case,continue,default,delete,driverelse,ext,for,function,if,implies,import,in,model,new,not,operation,or,return,switch,throw,transaction,var,while,xor},% 
+    morekeywords=[2]{ abs,add,addAll,aggregate,all,allInstances,allOfKind,allOfType,asBag,asBag,asBoolean,asInteger,asOrderedSet,asOrderedSet,asReal,asSequence,asSequence,asSet,asSet,asString,at,ceiling,characterAt,clear,clear,clone,closure,collect,concat,concat,containsKey,containsValue,count,createInstance,endsWith,err,errln,excludes,excludesAll,excluding,excludingAll,exists,first,firstToLowerCase,firstToUpperCase,flatten,floor,forAll,format,fourth,get,hasProperty,ifUndefined,includes,includesAll,including,includingAll,indexOf,invert,iota,isDefined,isEmpty,isEmpty,isInstantiable,isInteger,isKindOf,isReal,isSubstring,isTypeOf,isUndefined,keySet,last,length,log,log10,matches,max,max,min,min,mod,notEmpty,one,owningModel,pad,pow,powerset,print,println,product,put,putAll,random,reject,remove,remove,removeAll,removeAt,replace,round,second,select,selectOne,size,size,sortBy,split,startsWith,substring,sum,third,to,toBinary,toCharSequence,toHex,toLowerCase,toUpperCase,trim,type,values
+    },%
+    sensitive=t,%
+    morecomment=[l]//,%
+    morecomment=[s]{/*}{*/},%
+    morestring=[b]',%
+}
+%% Epsilon ETL
+\lst@definelanguage[Epsilon]{ETL}[Epsilon]{EOL}{
+    morekeywords={extends,guard,post,pre,rule,to,transform}
+ }
+%% Eclipse ATL
+\lst@definelanguage[Eclipse]{ATL}{
+    morekeywords={Bag,Map,OrderedSet,Sequence,Set,TupleType,and,create,else,endif,from,if,implies,in,let,module,not,or,resolveTemp,rule,then,to,xor},%
+    morekeywords=[2]{Boolean,Integer,Real,String,abs,acos,any,append,asBag,asSequence,asSet,asin,at,at,collect,concat,cos,count,debug,div,excludes,excludesAll,excluding,exists,exp,first,flatten,floor,forAll,includes,includesAll,including,indexOf,insertAt,intersection,isEmpty,isUnique,last,log,max,min,mod,notEmpty,oclIsKindOf,oclIsUndefined,oclType,one,output,prepend,println,refGetValue,refImmediateComposite,refInvokeOperation,refSetValue,regexReplaceAll,reject,replaceAll,round,select,sin,size,sortedBy,split,sqrt,startsWith,subOrderedSet,subSequence,substring,sum,symetricDifference,tan,toDegrees,toInteger,toLower,toRadians,toSequence,toString,toUpper,trim,union,writeTo},%
+    sensitive=t,%
+    morecomment=[l]--,%
+    morestring=[b]',%
+}
+\endinput
+%%
+%% End of file `lstlangmde.sty'.

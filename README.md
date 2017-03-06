@@ -3,12 +3,13 @@ A LaTeX Listings language definition file for languages used by the MDE communit
 
 ## installation (basic)
 Either clone or download the files in the repository.
-Copy both files to your LaTeX Listings package installation folder. If you use a package manager
+Copy files `lstlandmde.sty` and `lstlocal.cfg` to your LaTeX Listings package installation folder. If you use a package manager,
 the folder should be in your tex installation folder:
 ```
 <tex-instalation>\tex\latex\listings
 ```
 E.g. in my computer (windows) it is `C:\MiKTeX 2.9\tex\latex\listings`.
+
 If you use a local tex folder then you should know where it is ;)
 
 ## installation (advanced)
@@ -18,7 +19,7 @@ to merge your lstlocal.cfg file with the one from this repository.
 As a minimum make usre that lstlangmde.sty is added to your the list of \lstlanguagefiles.
 Optionally, also copy the default dialect definitions.
 
-## Refreshing latex daabase
+## Refreshing latex database
 After isntalation you need to refresh your database.
 
 ###For Windows (assuming your TeX distribution is MiKTeX):

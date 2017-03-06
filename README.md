@@ -20,7 +20,7 @@ As a minimum make usre that lstlangmde.sty is added to your the list of \lstlang
 Optionally, also copy the default dialect definitions.
 
 ## Refreshing latex database
-After isntalation you need to refresh your database.
+After instalation you need to refresh your database.
 
 ###For Windows (assuming your TeX distribution is MiKTeX):
 

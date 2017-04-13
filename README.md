@@ -31,3 +31,9 @@ Note that if you used the "only this user" installation you can only use the non
 
 ###For Linux / Mac
 Running `sudo texhash` should do the trick.
+
+## Contributing more languages
+If you have created language definitions for other languages please create a fork, add them and do a pull request.
+
+## TODO
+Probably we would like a small tex file that showcases all the languages so users can see the outcome and also work for testing definitions (new or changes).

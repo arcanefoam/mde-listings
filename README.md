@@ -9,6 +9,7 @@ A LaTeX Listings language definition file for languages used by the MDE communit
 - QVTc
 - EOL (Epsilon)
 - ETL (Epsilon)
+- ATL
 
 ## Keyword Groups (for appearance)
 The Listings package supports one or more keyword lists for each langauge. This allows to use different formatting options for each group. Languages defined in this file follow a two list approach. The lanuage syntax keywords (e.g. in, let, for, rule, etc.) are in list one. List two contains other langauge specific identifiers that are not part of the syntax, for example available operations on collections (OCL, EOL) or primitive type names (String, Sequence, etc.).

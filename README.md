@@ -1,6 +1,28 @@
 # mde_listings
 A LaTeX Listings language definition file for languages used by the MDE community
 
+## Supported Languages
+
+- OCL (Eclipse)
+- OCLinEcore
+- QVTr
+- QVTc
+- EOL (Epsilon)
+- ETL (Epsilon)
+
+## Keyword Groups (for appearance)
+The Listings package supports one or more keyword lists for each langauge. This allows to use different formatting options for each group. Languages defined in this file follow a two list approach. The lanuage syntax keywords (e.g. in, let, for, rule, etc.) are in list one. List two contains other langauge specific identifiers that are not part of the syntax, for example available operations on collections (OCL, EOL) or primitive type names (String, Sequence, etc.).
+
+In your tex file you can then define a different style for each list of keywords:
+```
+\lstset{
+    ...
+    keywordstyle=\bfseries,						            % list 1
+    keywordstyle=[2]\bfseries\textsl,			        % list 2
+    ...
+}
+```
+
 ## installation (basic)
 Either clone or download the files in the repository.
 Copy files `lstlandmde.sty` and `lstlocal.cfg` to your LaTeX Listings package installation folder. If you use a package manager,

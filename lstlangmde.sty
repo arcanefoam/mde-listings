@@ -68,6 +68,40 @@
     morecomment=[l]--,%
     morestring=[b]',%
 }
+%% Eclipse Emfatic
+%% Full credits to Miguel Garcia. Taken from: https://www.eclipse.org/forums/index.php?t=msg&th=131711&goto=427231&
+\lst@definelanguage[Eclipse]{Emfatic}{
+  alsoletter={@},
+  keywords={[1]attr,class,datatype,enum,import,interface,mapentry,op,package,ref,val},
+  keywordstyle={[1]\color{blue}\bfseries\underbar},
+  morekeywords={[2]abstract, derived, extends, super, false, id, ordered,
+    readonly, resolve, throws, transient, true, unique, unsettable, void,
+    volatile},
+  keywordstyle={[2]\color{MyDarkBlue}}, 
+  morekeywords={@namespage},
+  alsodigit={[]*()},
+  alsoother={;/:.}, 
+  morekeywords={[3]OrderedSet,Sequence,Set,Bag,EBoolean, EByte, EChar, EDouble, EFloat, EInt, 
+ELong, EShort, EBooleanObject, EByteObject, ECharacterObject, 
+EDoubleObject, EFloatObject, EIntegerObject, ELongObject, EShortObject, EDate, EString, EJavaClass, 
+boolean, byte, char, double, float, int, long, short, Boolean, 
+Byte, Character, Double, Float, Integer, Long, Short, Date, 
+String, Object, Class, EObject, EClass, 
+EDate, EBigInteger, EBigDecimal, EResource, EResourceSet, 
+EEnumerator, EEList, ETreeIterator, EJavaObject}, 
+  keywordstyle={[3]\color{dark-green}}, 
+  % emphstyle={\color{blue}}
+  string=[d]",
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=, % nothing happens
+  commentstyle=\color{light-gray}, % 
+  stringstyle=\textit, % 
+  columns=flexible
+}[keywords, comments, strings]   
+
 \endinput
 %%
 %% End of file `lstlangmde.sty'.

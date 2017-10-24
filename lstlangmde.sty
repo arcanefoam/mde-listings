@@ -52,10 +52,41 @@
     morestring=[b]',%
     morestring=[b]",%
 }
+%% Epsilon EVL
+\lst@definelanguage[Epsilon]{EVL}[Epsilon]{EOL}{
+    morekeywords={context,constraint,post,pre,guard,check,message,fix,title,do}
+}
 %% Epsilon ETL
 \lst@definelanguage[Epsilon]{ETL}[Epsilon]{EOL}{
     morekeywords={extends,guard,post,pre,rule,to,transform}
- }
+}
+%% Epsilon EWL
+\lst@definelanguage[Epsilon]{EWL}[Epsilon]{EOL}{
+    morekeywords={post,pre,rule,match,with,extends,guard,compare,do}
+}
+%% Epsilon EVL
+\lst@definelanguage[Epsilon]{EVL}[Epsilon]{EOL}{
+    morekeywords=[2]{@template}
+}
+%% Epsilon ECL
+\lst@definelanguage[Epsilon]{ECL}[Epsilon]{EOL}{
+    morekeywords={post,pre,wizard,guard,title,do}
+}
+%% Epsilon EML
+\lst@definelanguage[Epsilon]{EML}[Epsilon]{EOL}{
+    morekeywords={post,pre,rule,merge,with,into,extends}
+    morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
+}
+%% Epsilon Flock
+\lst@definelanguage[Epsilon]{Flock}[Epsilon]{EOL}{
+    morekeywords={post,pre,retype,to,when,delete,migrate,ignoring}
+    morekeywords=[2]{@strict,@cascade,}   
+}
+%% Epsilon EPL
+\lst@definelanguage[Epsilon]{EPL}[Epsilon]{EOL}{
+    morekeywords={post,pre,pattern,match,from,in,guard,active,onmatch,do,nomatch}
+    morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
+}
 %% Eclipse ATL
 \lst@definelanguage[Eclipse]{ATL}{
     morekeywords={Bag,Map,OrderedSet,Sequence,Set,TupleType,and,create,else,endif,from,if,implies,in,lazy,let,module,not,or,resolveTemp,rule,then,to,xor},%

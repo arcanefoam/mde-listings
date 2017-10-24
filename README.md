@@ -40,6 +40,8 @@ the folder should be in your tex installation folder:
 ```
 E.g. in my computer (windows) it is `C:\MiKTeX 2.9\tex\latex\listings`.
 
+For MacOS (assuming MacTex) should be something like `/usr/local/texlive/2017basic/texmf-dist/tex/latex/listings`
+
 If you use a local tex folder then you should know where it is ;)
 
 ## installation (advanced)

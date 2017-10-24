@@ -8,7 +8,14 @@ A LaTeX Listings language definition file for languages used by the MDE communit
 - QVTr
 - QVTc
 - EOL (Epsilon)
+- EVL (Epsilon)
 - ETL (Epsilon)
+- EWL (Epsilon)
+- EGL (Epsilon)
+- ECL (Epsilon)
+- EML (Epsilon)
+- Flock (Epsilon)
+- EPL (Epsilon)
 - ATL
 
 ## Keyword Groups (for appearance)

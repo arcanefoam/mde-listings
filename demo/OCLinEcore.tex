@@ -1,0 +1,49 @@
+\chapter{OClinECore}
+
+Taken from the OCLinECore example page
+
+\begin{oclinecore}
+    import ecore : 'http://www.eclipse.org/emf/2002/Ecore#/';
+    
+    package tutorial : tut = 'http://www.eclipse.org/mdt/ocl/oclinecore/tutorial'
+    {
+        class Library
+        {
+            attribute name : String;
+            property books#_'library' : Book[*] { composes };
+            property loans : Loan[*] { composes };
+            property members#_'library' : Member[*] { composes };
+        }
+        
+        class Book
+        {
+            invariant SufficientCopies:
+                library.loans->select(book=self)->size() <= copies;
+            attribute name : String;
+            attribute copies : Integer;
+            property _'library'#books : Library;
+            property loans : Loan[*] { derived,volatile }
+            {
+                derivation: library.loans->select(book=self);
+            }
+            property _'library'#books : Library[?];
+            operation isAvailable() : Boolean[?]
+            {
+                body: loans->size() < copies;
+            }
+        }
+        
+        class Member
+        {
+            attribute name : String;
+            property _'library'#members : Library;
+        }
+        
+        class Loan
+        {
+            property book : Book;
+            property member : Member;
+            attribute date : ecore::EDate;
+        }
+    }
+\end{oclinecore}

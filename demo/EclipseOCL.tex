@@ -1,0 +1,52 @@
+\chapter{Eclipse OCL}
+
+\section{Invariant - Examples}
+
+\begin{ocl}
+context Meeting inv: self.end > self.start
+
+-- "self" always refers to the object identifier from which the constraint is evaluated.
+context Meeting inv: end > : end > start
+
+-- Names can be given to the constraint
+context Meeting inv startEndConstraint:
+self.end > self.start
+\end{ocl}
+
+\section{Precondition - Examples}
+\begin{ocl}
+context Meeting::shift(d:Integer)
+pre: self.isConfirmed = false
+
+context Meeting::shift(d:Integer)
+pre: d>0 pre: d>0
+
+context Meeting::shift(d:Integer)
+pre: self.isConfirmed = false and d>0
+\end{ocl}
+
+\section{Postcondition - Examples}
+\begin{ocl}
+
+context Meeting::duration():Integer
+post: result = self.end – self.start
+-- keyword result refers to the result of the operation
+
+context Meeting::confirm()
+post: self.isConfirmed = true
+\end{ocl}
+
+
+\section{Examples for Collection Operations}
+\begin{ocl}
+context Teammeeting
+inv: participants->forAll(team=self.for)
+
+context Meeting inv: oclIsTypeOf(Teammeeting)
+implies participants->forAll(team=self.for)
+
+context Teammember::numMeeting():Integer
+post: result=meetings->size()
+context Teammember::numConfMeeting():Integer context Teammember::numConfMeeting():Integer
+post: result=meetings->select(isConfirmed)->size()
+\end{ocl}

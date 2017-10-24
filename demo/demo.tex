@@ -1,0 +1,69 @@
+\documentclass[]{report}
+% Title Page
+\title{Langauge Definitions Demo}
+\author{arcanefoam}
+\usepackage{listings}
+\lstloadlanguages{[Eclipse]OCL,[Eclipse]QVTc,[Eclipse]QVTr}
+\lstset{% general command to set parameter(s)
+    basicstyle=\tiny, 						% print whole listing small
+    keywordstyle=\bfseries,					% bold black keywords
+    keywordstyle=[2]\bfseries\textsl,		% slanted directives
+    commentstyle=\emph, 					% white comments
+    stringstyle=\ttfamily, 					% typewriter type for strings
+    showstringspaces=false,					% no special string spaces
+    escapechar=@,							% escape character for latex, e.g. \label{key}
+    breaklines=true,						% break lines
+    numberblanklines=false,					% no numbers in breaklines
+    breakatwhitespace=true,
+    numbersep=10pt,
+    captionpos=t,
+    fontadjust=true
+}
+% Language Styles
+\lstdefinestyle{numbers}
+{numbers=left,numberstyle=\tiny\color{gray},numbersep=5pt}
+\lstdefinestyle{ocl}
+{language={[Eclipse]OCL}}
+\lstdefinestyle{oclinecore}
+{language={[Eclipse]OCLinEcore}}
+\lstdefinestyle{qvtr}
+{style=numbers,language={[Eclipse]QVTr}}
+\lstdefinestyle{qvtc}
+{style=numbers,language={[Eclipse]QVTc}}
+% Language Environments
+\makeatletter
+\lstnewenvironment{ocl}[1][]
+{\lstset{style=ocl,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+\makeatletter
+\lstnewenvironment{oclinecore}[1][]
+{\lstset{style=oclinecore,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+\makeatletter
+\lstnewenvironment{qvtc}[1][]
+{\lstset{style=qvtc,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+\makeatletter
+\lstnewenvironment{qvtr}[1][]
+{\lstset{style=qvtr,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\begin{document}
+\maketitle
+\input{EclipseOCL}
+\input{OCLinEcore}
+
+
+\end{document}          

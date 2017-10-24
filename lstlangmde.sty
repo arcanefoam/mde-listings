@@ -64,8 +64,9 @@
 \lst@definelanguage[Epsilon]{EWL}[Epsilon]{EOL}{
     morekeywords={post,pre,rule,match,with,extends,guard,compare,do}
 }
-%% Epsilon EVL
-\lst@definelanguage[Epsilon]{EVL}[Epsilon]{EOL}{
+%% Epsilon EGL
+\lst@definelanguage[Epsilon]{EGL}[Epsilon]{EOL}{
+    alsoletter={@},
     morekeywords=[2]{@template}
 }
 %% Epsilon ECL
@@ -74,16 +75,19 @@
 }
 %% Epsilon EML
 \lst@definelanguage[Epsilon]{EML}[Epsilon]{EOL}{
+    alsoletter={@},
     morekeywords={post,pre,rule,merge,with,into,extends}
     morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
 }
 %% Epsilon Flock
 \lst@definelanguage[Epsilon]{Flock}[Epsilon]{EOL}{
+    alsoletter={@},
     morekeywords={post,pre,retype,to,when,delete,migrate,ignoring}
     morekeywords=[2]{@strict,@cascade,}   
 }
 %% Epsilon EPL
 \lst@definelanguage[Epsilon]{EPL}[Epsilon]{EOL}{
+    alsoletter={@},
     morekeywords={post,pre,pattern,match,from,in,guard,active,onmatch,do,nomatch}
     morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
 }

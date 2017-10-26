@@ -2,8 +2,8 @@
 % Title Page
 \title{Langauge Definitions Demo}
 \author{arcanefoam}
+\usepackage{xcolor}
 \usepackage{listings}
-\lstloadlanguages{[Eclipse]OCL,[Eclipse]QVTc,[Eclipse]QVTr}
 \lstset{% general command to set parameter(s)
     basicstyle=\tiny, 						% print whole listing small
     keywordstyle=\bfseries,					% bold black keywords
@@ -11,7 +11,7 @@
     commentstyle=\emph, 					% white comments
     stringstyle=\ttfamily, 					% typewriter type for strings
     showstringspaces=false,					% no special string spaces
-    escapechar=@,							% escape character for latex, e.g. \label{key}
+%    escapechar=@,							% escape character for latex, e.g. \label{key}
     breaklines=true,						% break lines
     numberblanklines=false,					% no numbers in breaklines
     breakatwhitespace=true,
@@ -30,6 +30,17 @@
 {style=numbers,language={[Eclipse]QVTr}}
 \lstdefinestyle{qvtc}
 {style=numbers,language={[Eclipse]QVTc}}
+\lstdefinestyle{eol}
+{style=numbers,language=EOL}
+\lstdefinestyle{evl}
+{style=numbers,language=EVL}
+\lstdefinestyle{etl}
+{style=numbers,language=ETL}
+\lstdefinestyle{ewl}
+{style=numbers,language=EWL}
+\lstdefinestyle{egl}
+{style=numbers,language=EGL}
+
 % Language Environments
 \makeatletter
 \lstnewenvironment{ocl}[1][]
@@ -39,12 +50,14 @@
 {\csname\@lst @SaveFirstNumber\endcsname}
 \makeatother
 \makeatletter
+
 \lstnewenvironment{oclinecore}[1][]
 {\lstset{style=oclinecore,
         #1}%
     \csname\@lst @SetFirstNumber\endcsname}
 {\csname\@lst @SaveFirstNumber\endcsname}
 \makeatother
+
 \makeatletter
 \lstnewenvironment{qvtc}[1][]
 {\lstset{style=qvtc,
@@ -52,9 +65,50 @@
     \csname\@lst @SetFirstNumber\endcsname}
 {\csname\@lst @SaveFirstNumber\endcsname}
 \makeatother
+
 \makeatletter
 \lstnewenvironment{qvtr}[1][]
 {\lstset{style=qvtr,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\makeatletter
+\lstnewenvironment{eol}[1][]
+{\lstset{style=eol,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\makeatletter
+\lstnewenvironment{evl}[1][]
+{\lstset{style=evl,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\makeatletter
+\lstnewenvironment{etl}[1][]
+{\lstset{style=etl,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\makeatletter
+\lstnewenvironment{ewl}[1][]
+{\lstset{style=ewl,
+        #1}%
+    \csname\@lst @SetFirstNumber\endcsname}
+{\csname\@lst @SaveFirstNumber\endcsname}
+\makeatother
+
+\makeatletter
+\lstnewenvironment{egl}[1][]
+{\lstset{style=egl,
         #1}%
     \csname\@lst @SetFirstNumber\endcsname}
 {\csname\@lst @SaveFirstNumber\endcsname}
@@ -64,6 +118,19 @@
 \maketitle
 \input{EclipseOCL}
 \input{OCLinEcore}
+\input{QVTr}
+\input{QVTc}
+\input{EOL}
+\input{EVL}
+\input{ETL}
+\input{EWL}
+\input{EGL}
+\input{ECL}
+\input{EML}
+\input{Flock}
+\input{EPL}
+\input{ATL}
+\input{Emfatic}
 
 
 \end{document}          

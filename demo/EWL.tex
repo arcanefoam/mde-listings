@@ -1,0 +1,62 @@
+\chapter{EWL}
+
+Taken from the Epsilon Book
+
+\begin{ewl}
+wizard ClassToSingleton {
+    // The wizard applies when a class is selected
+    guard : self.isTypeOf(Class)
+   
+    title : "Convert " + self.name + " to a singleton"
+   
+    do {
+        // Create the getInstance() operation
+        var gi : new Operation;
+        gi.owner = self;
+        gi.name = "getInstance";
+        gi.visibility = VisibilityKind#vk_public;
+        gi.ownerScope = ScopeKind#sk_classifier;
+        // Create the return parameter of the operation
+        var ret : new Parameter;
+        ret.type = self;
+        ret.kind = ParameterDirectionKind#pdk_return;
+        gi.parameter = Sequence{ret};
+        
+        // Create the instance field
+        var ins : new Attribute;
+        ins.name = "instance";
+        ins.type = self;
+        ins.visibility = VisibilityKind#vk_private;
+        ins.ownerScope = ScopeKind#sk_classifier;
+        ins.owner = self;
+        
+        // Attach the <<singleton>> stereotype
+        self.attachStereotype("singleton");
+    }
+}
+    
+    
+// Attaches a stereotype with the specified name
+// to the Model Element on which it is invoked
+operation ModelElement attachStereotype(name : String) {
+    var stereotype : Stereotype;
+    
+    // Try to find an existing stereotype with this name
+    stereotype = Stereotype.allInstances.selectOne(s|s.name = name);
+    
+    // If there is no existing stereotype
+    // with that name, create one
+    if (not stereotype.isDefined()){
+        \makeatletter
+        \lstnewenvironment{etl}[1][]
+        {\lstset{style=etl,
+                #1}%
+            \csname\@lst @SetFirstNumber\endcsname}
+        {\csname\@lst @SaveFirstNumber\endcsname}
+        \makeatotherotype.namespace = self.namespace;
+    }
+    
+    // Attach the stereotype to the model element
+    self.stereotype.add(stereotype);
+}
+\end{ewl}

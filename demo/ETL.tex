@@ -1,0 +1,34 @@
+\chapter{ETL}
+
+Taken from the Epsilon Book
+
+\begin{etl}
+rule Tree2Node
+    transform t : Tree!Tree
+    to n : Graph!Node {
+    n.label = t.label;
+    if (t.parent.isDefined()) {
+        var edge = new Graph!Edge;
+        edge.source = n;
+        edge.target = t.parent.equivalent();
+        edge.target ::= t.parent;
+    }
+}
+\end{etl}
+
+\begin{etl}
+rule Tree2Node
+    transform t : Tree!Tree
+    to n : Graph!Node {
+        
+        guard : UserInput.confirm ("Transform tree " + t.label + "?", true)
+        
+        n.label = t.label;
+        var target : Graph!Node ::= t.parent;
+        if (target.isDefined()) {
+            var edge = new Graph!Edge;
+            edge.source = n;
+            edge.target = target;
+        }
+    }
+\end{etl}

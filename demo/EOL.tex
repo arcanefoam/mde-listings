@@ -1,0 +1,28 @@
+\chapter{EOL}
+
+Taken from the Epsilon Book
+
+\begin{eol}
+1.add1().add2().println();
+
+operation Integer add1() : Integer {
+    return self + 1;
+}
+
+operation Integer add2() : Integer {
+    return self + 2;
+}
+\end{eol}
+
+\begin{eol}
+"1".test();
+1.test();
+
+operation String test() {
+    (self + " is a string").println();
+}
+
+operation Integer test() {
+    (self + "is an integer").println();
+}
+\end{eol}

@@ -43,6 +43,7 @@
 }
 %% Epsilon EOL
 \lst@definelanguage[Epsilon]{EOL} {
+    alsoletter={:,=},
     morekeywords={::,::=,Bag,Collection,List,Map,Native,OrderedSet,Sequence,Set,abort,alias,and,break,breakAll,case,continue,default,delete,driverelse,ext,for,function,if,implies,import,in,model,new,not,operation,or,return,switch,throw,transaction,var,while,xor},% 
     morekeywords=[2]{ abs,add,addAll,aggregate,all,allInstances,allOfKind,allOfType,asBag,asBag,asBoolean,asInteger,asOrderedSet,asOrderedSet,asReal,asSequence,asSequence,asSet,asSet,asString,at,ceiling,characterAt,clear,clear,clone,closure,collect,concat,concat,containsKey,containsValue,count,createInstance,endsWith,err,errln,excludes,excludesAll,excluding,excludingAll,exists,first,firstToLowerCase,firstToUpperCase,flatten,floor,forAll,format,fourth,get,hasProperty,ifUndefined,includes,includesAll,including,includingAll,indexOf,invert,iota,isDefined,isEmpty,isEmpty,isInstantiable,isInteger,isKindOf,isReal,isSubstring,isTypeOf,isUndefined,keySet,last,length,log,log10,matches,max,max,min,min,mod,notEmpty,one,owningModel,pad,pow,powerset,print,println,product,put,putAll,random,reject,remove,remove,removeAll,removeAt,replace,round,second,select,selectOne,size,size,sortBy,split,startsWith,substring,sum,third,to,toBinary,toCharSequence,toHex,toLowerCase,toUpperCase,trim,type,values
     },%
@@ -62,7 +63,7 @@
 }
 %% Epsilon EWL
 \lst@definelanguage[Epsilon]{EWL}[Epsilon]{EOL}{
-    morekeywords={post,pre,rule,match,with,extends,guard,compare,do}
+    morekeywords={post,pre,rule,match,with,extends,guard,title,compare,do}
 }
 %% Epsilon EGL
 \lst@definelanguage[Epsilon]{EGL}[Epsilon]{EOL}{

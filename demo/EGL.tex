@@ -1,0 +1,29 @@
+\chapter{EGL}
+
+Taken from the Epsilon Book
+
+\begin{egl}
+[% for (i in Sequence{1..5}) { %]
+i is [%=i%]
+[% } %]
+
+[% for (c in Class.all) { %]
+[%=c.name%]
+[% } %]
+\end{egl}
+
+
+\begin{egl}
+[% c.declaration(); %]
+[% operation Class declaration() { %]
+[%=self.visibility%] class [%=self.name%] {}
+[% } %]
+\end{egl}
+
+\begin{egl}
+[%=c.declaration()%]
+[% @template
+operation Class declaration() { %]
+[%=self.visibility%] class [%=self.name%] {}
+[% } %]
+\end{egl}

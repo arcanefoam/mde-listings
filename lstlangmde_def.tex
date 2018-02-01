@@ -1,0 +1,119 @@
+%% Eclipse OCL
+\lst@definelanguage[Eclipse]{OCL} {
+    morekeywords={and,body,context,def,derive,else,endif,endpackage,false,if,implies,in,init,inv,invalid,let,not,null,or,package,post,pre,self,static,then,true,xor,Bag,Boolean,Collection,Integer,OclAny,OclInvalid,OclMessage,OclVoid,OrderedSet,Real,Sequence,Set,String,Tuple,UnlimitedNatural},% 
+    morekeywords=[2]{oclIsNew,oclIsUndefined,oclAsType,oclIsTypeOf,oclIsKindOf,oclisInState,allInstances,hasReturned,result,isSignalSent,isOperationCall,count,execludes,excludesAll,includes,includesAll,isEmpty,notEmpty,size,sum,append,asBag,asOrderedSet,asSequence,asSet,at,excluding,first,flatten,including,indexOf,insertAt,intersection,last,prepend,subOrderedSet,subsequence,symmetricDifference,union,any,collect,collectNested,exists,forAll,isUnique,iterate,one,reject,select,sortedBy}
+    sensitive=t,%
+    morecomment=[l]--,%
+    morecomment=[s]{/*}{*/},%
+    morestring=[b]',%
+}[keywords,comments,strings]
+%% Eclipse OCL in Ecore
+\lst@definelanguage[Eclipse]{OCLinEcore}[Eclipse]{OCL}{
+    morekeywords={abstract,annotation,attribute,body,callable,class,composes,datatype,definition,derivation,derived,enum,extends,extends,id,import,initial,interface,invariant,library ,module,operation,ordered,package,postcondition,precondition,property,readonly,resolve,serializable,static,super,transient,unique,unsettable,volatile}
+}
+%% Eclipse QVTr
+\lst@definelanguage[Eclipse]{QVTr}[Eclipse]{OCL}{
+    morekeywords={checkonly,domain,enforce,extends,implementedby,import,key,overrides,primitive,query,relation,top,transformation,when,where,++},%
+    alsoletter={+}
+}
+%% Eclipse QVTc
+\lst@definelanguage[Eclipse]{QVTc}[Eclipse]{OCL}{
+    morekeywords={import,transformation,imports,uses,map,in,refines,check,enforce,where,realize,default,query}
+}
+%% Epsilon EOL
+\lst@definelanguage[Epsilon]{EOL} {
+    alsoletter={:,=},
+    morekeywords={::,::=,Bag,Collection,List,Map,Native,OrderedSet,Sequence,Set,abort,alias,and,break,breakAll,case,continue,default,delete,else,ext,for,function,if,implies,import,in,model,new,not,operation,or,return,switch,throw,transaction,var,while,xor},% 
+    morekeywords=[2]{ abs,add,addAll,aggregate,all,allInstances,allOfKind,allOfType,asBag,asBag,asBoolean,asInteger,asOrderedSet,asOrderedSet,asReal,asSequence,asSequence,asSet,asSet,asString,at,ceiling,characterAt,clear,clear,clone,closure,collect,concat,concat,containsKey,containsValue,count,createInstance,endsWith,err,errln,excludes,excludesAll,excluding,excludingAll,exists,first,firstToLowerCase,firstToUpperCase,flatten,floor,forAll,format,fourth,get,hasProperty,ifUndefined,includes,includesAll,including,includingAll,indexOf,invert,iota,isDefined,isEmpty,isEmpty,isInstantiable,isInteger,isKindOf,isReal,isSubstring,isTypeOf,isUndefined,keySet,last,length,log,log10,matches,max,max,min,min,mod,notEmpty,one,owningModel,pad,pow,powerset,print,println,product,put,putAll,random,reject,remove,remove,removeAll,removeAt,replace,round,second,select,selectOne,size,size,sortBy,split,startsWith,substring,sum,third,to,toBinary,toCharSequence,toHex,toLowerCase,toUpperCase,trim,type,values
+    },%
+    sensitive=t,%
+    morecomment=[l]//,%
+    morecomment=[s]{/*}{*/},%
+    morestring=[b]',%
+    morestring=[b]",%
+}
+%% Epsilon EVL
+\lst@definelanguage[Epsilon]{EVL}[Epsilon]{EOL}{
+    morekeywords={context,constraint,post,pre,guard,check,message,fix,title,do}
+}
+%% Epsilon ETL
+\lst@definelanguage[Epsilon]{ETL}[Epsilon]{EOL}{
+    morekeywords={extends,guard,post,pre,rule,to,transform}
+}
+%% Epsilon EWL
+\lst@definelanguage[Epsilon]{EWL}[Epsilon]{EOL}{
+    morekeywords={post,pre,rule,match,with,extends,guard,title,compare,do}
+}
+%% Epsilon EGL
+\lst@definelanguage[Epsilon]{EGL}[Epsilon]{EOL}{
+    alsoletter={@},
+    morekeywords=[2]{@template}
+}
+%% Epsilon EGL
+\lst@definelanguage[Epsilon]{EGL}[Epsilon]{EOL}{
+    alsoletter={@},
+    morekeywords=[2]{@template}
+}
+%% Epsilon ECL
+\lst@definelanguage[Epsilon]{ECL}[Epsilon]{EOL}{
+    morekeywords={post,pre,wizard,guard,title,do}
+}
+%% Epsilon EML
+\lst@definelanguage[Epsilon]{EML}[Epsilon]{EOL}{
+    alsoletter={@},
+    morekeywords={post,pre,rule,merge,with,into,extends}
+    morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
+}
+%% Epsilon Flock
+\lst@definelanguage[Epsilon]{Flock}[Epsilon]{EOL}{
+    alsoletter={@},
+    morekeywords={post,pre,retype,to,when,delete,migrate,ignoring}
+    morekeywords=[2]{@strict,@cascade,}   
+}
+%% Epsilon EPL
+\lst@definelanguage[Epsilon]{EPL}[Epsilon]{EOL}{
+    alsoletter={@},
+    morekeywords={post,pre,pattern,match,from,in,guard,active,onmatch,do,nomatch}
+    morekeywords=[2]{@abstract,@lazy,@primary,@greedy}   
+}
+%% Eclipse ATL
+\lst@definelanguage[Eclipse]{ATL}{
+    morekeywords={Bag,Map,OrderedSet,Sequence,Set,TupleType,and,create,else,endif,from,if,implies,in,lazy,let,module,not,or,resolveTemp,rule,then,to,xor},%
+    morekeywords=[2]{Boolean,Integer,Real,String,abs,acos,any,append,asBag,asSequence,asSet,asin,at,at,collect,concat,cos,count,debug,div,excludes,excludesAll,excluding,exists,exp,first,flatten,floor,forAll,includes,includesAll,including,indexOf,insertAt,intersection,isEmpty,isUnique,last,log,max,min,mod,notEmpty,oclIsKindOf,oclIsUndefined,oclType,one,output,prepend,println,refGetValue,refImmediateComposite,refInvokeOperation,refSetValue,regexReplaceAll,reject,replaceAll,round,select,sin,size,sortedBy,split,sqrt,startsWith,subOrderedSet,subSequence,substring,sum,symetricDifference,tan,toDegrees,toInteger,toLower,toRadians,toSequence,toString,toUpper,trim,union,writeTo},%
+    sensitive=t,%
+    morecomment=[l]--,%
+    morestring=[b]',%
+}
+%% Eclipse Emfatic
+%% Full credits to Miguel Garcia. Taken from: https://www.eclipse.org/forums/index.php?t=msg&th=131711&goto=427231&
+\lst@definelanguage[Eclipse]{Emfatic}{
+  alsoletter={@},
+  keywords={[1]attr,class,datatype,enum,import,interface,mapentry,op,package,ref,val},
+  keywordstyle={[1]\color{blue}\bfseries\underbar},
+  morekeywords={[2]abstract, derived, extends, super, false, id, ordered,
+    readonly, resolve, throws, transient, true, unique, unsettable, void,
+    volatile},
+  keywordstyle={[2]\color{MyDarkBlue}}, 
+  morekeywords={@namespage},
+  alsodigit={[]*()},
+  alsoother={;/:.}, 
+  morekeywords={[3]OrderedSet,Sequence,Set,Bag,EBoolean, EByte, EChar, EDouble, EFloat, EInt, 
+ELong, EShort, EBooleanObject, EByteObject, ECharacterObject, 
+EDoubleObject, EFloatObject, EIntegerObject, ELongObject, EShortObject, EDate, EString, EJavaClass, 
+boolean, byte, char, double, float, int, long, short, Boolean, 
+Byte, Character, Double, Float, Integer, Long, Short, Date, 
+String, Object, Class, EObject, EClass, 
+EDate, EBigInteger, EBigDecimal, EResource, EResourceSet, 
+EEnumerator, EEList, ETreeIterator, EJavaObject}, 
+  keywordstyle={[3]\color{dark-green}}, 
+  % emphstyle={\color{blue}}
+  string=[d]",
+  sensitive=true,
+  morecomment=[l]{//},
+  morecomment=[s]{/*}{*/},
+  keywordstyle=\color{blue}\bfseries,
+  identifierstyle=, % nothing happens
+  commentstyle=\color{light-gray}, % 
+  stringstyle=\textit, % 
+  columns=flexible
+}[keywords, comments, strings]   

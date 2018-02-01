@@ -1,4 +1,4 @@
-# mde_listings
+# MDE Listings
 A LaTeX Listings language definition file for languages used by the MDE community
 
 ## Supported Languages
@@ -17,55 +17,86 @@ A LaTeX Listings language definition file for languages used by the MDE communit
 - Flock (Epsilon)
 - EPL (Epsilon)
 - ATL
+- Emfatic 
 
 ## Keyword Groups (for appearance)
-The Listings package supports one or more keyword lists for each langauge. This allows to use different formatting options for each group. Languages defined in this file follow a two list approach. The language syntax keywords (e.g. in, let, for, rule, etc.) are in list one. List two contains other langauge specific identifiers that are not part of the syntax, for example available operations on collections (OCL, EOL) or primitive type names (String, Sequence, etc.).
+The Listings package supports one or more keyword lists for each language. This allows to use different formatting
+options for each group. Languages defined in this file follow a two list approach. The language syntax keywords
+(e.g. in, let, for, rule, etc.) are in list one. List two contains other language specific identifiers that are not part
+of the syntax, for example available operations on collections (OCL, EOL) or primitive type names (String, Sequence,
+etc.).
 
 In your tex file you can then define a different style for each list of keywords:
 ```
 \lstset{
     ...
-    keywordstyle=\bfseries,						        % list 1
-    keywordstyle=[2]\bfseries\textsl,			        % list 2
+    keywordstyle=\bfseries,              % list 1
+    keywordstyle=[2]\bfseries\textsl,    % list 2
     ...
 }
 ```
 
-## installation (basic)
-Either clone or download the files in the repository.
-Copy files `lstlandmde.sty` and `lstlocal.cfg` to your LaTeX Listings package installation folder. If you use a package manager,
-the folder should be in your tex installation folder:
+## Installation
+
+### Quick and Dirty
+Download the files in the repository as a zip and extract them in your preferred location. 
+Copy `lstlang0.sty` and `lstlangmde_def.tex` to the folder where your tex file(s) resides.
+The MDE languages should now be available to use for listings.
+
+**NOTE**: This assumes you have not previously used the `lstlang0.sty` to add new languages.
+If so, you will have to merge the two files.
+
+
+### Install in a TeX local/user tree
+This seems to be the most convenient way:
+1. No need to mess with your TeX installation
+2. No "fuss" about having a git repo in the TeX installation (see #1)
+3. Easy to replicate across machines (i.e. the folder structure is the same)
+4. Uses the mde-listings git repo (easy keep up to date)
+ 
+Adding a user/local tree is platform dependent. 
+#### Windows Users (MikTeX)
+*Speravir* (@Tex-StackExchnge) has some of the most helpful posts about MikTex. Please read [this one](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) and decide
+where to create your local/user listings folder. 
+Make sure you at least have the `tex\latex` structure, and underneath that a `listings` folder, e.g.
+`c:\data\localtexmf\tex\latex\listings`
+
+#### Nix users
+I would recommend you to use your TeXMF user folder. The easiest way to create the listings folder is:
 ```
-<tex-instalation>\tex\latex\listings
+sudo mkdir -p $(kpsewhich -var-value TEXMFHOME)/tex/latex/listings
 ```
-E.g. in my computer (windows) it is `C:\MiKTeX 2.9\tex\latex\listings`.
+The `$(kpsewhich -var-value TEXMFHOME)` makes uses of the TEXMFHOME variable to create the folder (somewhere in your
+User [library] folder)
 
-For MacOS (assuming MacTex) should be something like `/usr/local/texlive/2017basic/texmf-dist/tex/latex/listings`
+Once you have created a listings folder, clone the mde-listings repository to that folder (nix users can use the 
+kpsewhich trick to locate the folder)
 
-If you use a local tex folder then you should know where it is ;)
+```
+git clone https://github.com/arcanefoam/mde-listings.git path/to/local/tex/latex/listings
+```
 
-## installation (advanced)
-If you have other style files you have already added to your listings installation then you need
-to merge your lstlocal.cfg file with the one from this repository.
+After you have cloned (and after each time you pull new changes) you need to refresh your latex database.
 
-As a minimum make usre that lstlangmde.sty is added to your the list of \lstlanguagefiles.
-Optionally, also copy the default dialect definitions.
+#### Windows (MikTeX)
+Use the refresh button, from the general tab in the settings application.
 
-## Refreshing latex database
-After instalation you need to refresh your database.
+#### Nix
+```
+sudo texhash
+```
 
-###For Windows (assuming your TeX distribution is MiKTeX):
+### For all users (advanced)
+Follow a similar procedure as before, but clone the mde-listings repo to your TeX installation. In Nix you can find this
+by using `TEXMFLOCAL` instead of `TEXMFHOME`. In Windows (MikTeX) depends on your type of installation. 
 
-1. Start the Settings windows of MiKTeX with the command sequence: Windows Start -- all programms -- Maintenance (Admin) -- Settings (Admin)
-2. Choose General and click on Refresh FNDB
+**NOTE**: Cloning the repository into the local TeX installation can cause issues. For this type of installation I would
+rather use the unzip-copy approach. USE AT YOUR OWN RISK! 
 
-Note that if you used the "only this user" installation you can only use the non-admin commands.
-
-###For Linux / Mac
-Running `sudo texhash` should do the trick.
 
 ## Contributing more languages
 If you have created language definitions for other languages please create a fork, add them and do a pull request.
 
 ## TODO
-Probably we would like a small tex file that showcases all the languages so users can see the outcome and also work for testing definitions (new or changes).
+- Probably we would like a small tex file that showcases all the languages so users can see the outcome and also work for testing definitions (new or changes).
+- Add default *.prf files for the supported languages (probably providing a format that resembles their native look).

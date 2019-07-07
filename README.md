@@ -57,7 +57,7 @@ This seems to be the most convenient way:
 Adding a user/local tree is platform dependent. 
 #### Windows Users (MikTeX)
 *Speravir* (@Tex-StackExchnge) has some of the most helpful posts about MikTex. Please read [this one](https://tex.stackexchange.com/questions/69483/create-a-local-texmf-tree-in-miktex) and decide
-where to create your local/user listings folder. 
+where to create your local/user listings folder and how to add it to your latex roots.
 Make sure you at least have the `tex\latex` structure, and underneath that a `listings` folder, e.g.
 `c:\data\localtexmf\tex\latex\listings`
 
